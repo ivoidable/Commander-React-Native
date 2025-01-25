@@ -18,6 +18,6 @@ No command shall:
 
 ## How to gain commands
 
+- You will mainly receive commands by winning a bet (max 5 commands per bet)
 - Successfully executing 3 commands in a row, will grant you 1 command
 - A player failing execute your command, you will grant you 2 commands
-- You get 3 extra commands every month
