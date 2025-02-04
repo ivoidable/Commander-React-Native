@@ -16,5 +16,5 @@
     ".expo/types/**/*.ts",
     "expo-env.d.ts",
     "nativewind-env.d.ts"
-, "context/authContext.jsx"  ]
+, "context/authContext.jsx", "components/HomeHeader.jsx", "components/ChatList.jsx", "components/ChatItem.jsx"  ]
 }

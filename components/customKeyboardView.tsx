@@ -2,17 +2,30 @@ import { View, Text, KeyboardAvoidingView, Platform, ScrollView } from 'react-na
 import React from 'react'
 
 const ios = Platform.OS === 'ios'
-export default function CustomKeyboardView(props: any) {
+export default function CustomKeyboardView({children, inChat}: any) {
+  let kavConfig = {};
+  let scrollViewConfig = {};
+  if (inChat) {
+    kavConfig = {
+      keyboardVerticalOffset: 90
+    };
+    scrollViewConfig = {
+      contentContainerStyle: {
+        flex: 1,
+        justifyContent: 'flex-end'
+      }
+    }
+  }
   return (
-    <KeyboardAvoidingView behavior={ios ? 'padding' : 'height'} style={{ flex: 1 }} >
-        <ScrollView
+    <KeyboardAvoidingView behavior={ios ? 'padding' : 'height'} style={{ flex: 1, backgroundColor: 'white' }} {...kavConfig} collapsable={false} >
+        {/* <ScrollView
         style={{ flex: 1 }}
-        contentContainerStyle={{ flex: 1 }}
         showsVerticalScrollIndicator={false}
-        keyboardShouldPersistTaps="handled"
-        >
-
-        </ScrollView>
+        {...scrollViewConfig}
+        keyboardShouldPersistTaps='always'
+        bounces={false}> */}
+            {children}
+        {/* </ScrollView> */}
     </KeyboardAvoidingView>
   )
 }
